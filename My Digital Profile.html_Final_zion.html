@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///C:/Users/norre/Downloads/My%20Digital%20Profile.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Profile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      color: #ffffff;
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.84), rgba(2, 6, 23, 0.95)),
+        url("tech-bg.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(0, 217, 255, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(147, 51, 234, 0.18), transparent 30%),
+        linear-gradient(120deg, transparent 0%, rgba(56,189,248,0.05) 45%, transparent 80%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1160px, 88%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .navbar {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.45);
+      font-size: 20px;
+    }
+
+    .logo-text { font-size: 20px; }
+    .logo-text span { color: #38bdf8; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover { color: #38bdf8; }
+
+    .nav-button {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #e0f2fe;
+    }
+
+    section { padding: 86px 0; }
+
+    .hero {
+      min-height: calc(100vh - 74px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 44px;
+      padding: 70px 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: #bae6fd;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      margin-bottom: 22px;
+      box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.06);
+    }
+
+    .tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 16px #22c55e;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8, #a78bfa, #f0abfc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0284c7, #7c3aed);
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.27);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.42);
+    }
+
+    .btn.secondary {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: none;
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 650px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.67);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+      color: #7dd3fc;
+    }
+
+    .stat span {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+    }
+
+    .tech-card {
+      width: min(420px, 100%);
+      min-height: 470px;
+      border-radius: 34px;
+      padding: 28px;
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.86), rgba(2, 6, 23, 0.94));
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      box-shadow:
+        0 0 55px rgba(56, 189, 248, 0.18),
+        inset 0 0 35px rgba(124, 58, 237, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.38), transparent 68%);
+      top: -60px;
+      right: -60px;
+    }
+
+    .tech-card::after {
+      content: "DIGITAL PROFILE";
+      position: absolute;
+      bottom: 22px;
+      right: 22px;
+      color: rgba(255, 255, 255, 0.045);
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 0.9;
+      text-align: right;
+    }
+
+    .preview-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      margin: 18px 0 24px;
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.16);
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-orb {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      margin: 4px auto 12px;
+      background:
+        radial-gradient(circle at 35% 30%, #ffffff, #38bdf8 18%, #7c3aed 55%, #020617 100%);
+      box-shadow:
+        0 0 38px rgba(56, 189, 248, 0.5),
+        0 0 80px rgba(124, 58, 237, 0.28);
+      position: relative;
+      z-index: 1;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .profile-orb::before {
+      content: "🚀";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 56px;
+    }
+
+    .tech-card h2,
+    .tech-card p {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tech-card h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .tech-card p {
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+
+    .scan-line {
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+      position: absolute;
+      left: 0;
+      top: 70px;
+      opacity: 0.6;
+      animation: scan 3.5s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-60px); }
+      100% { transform: translateY(440px); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .floating-preview {
+      position: fixed;
+      right: 20px;
+      top: 102px;
+      width: 220px;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      box-shadow: 0 0 38px rgba(56, 189, 248, 0.15);
+      backdrop-filter: blur(16px);
+      z-index: 80;
+      display: none;
+    }
+
+    .floating-preview img {
+      width: 100%;
+      height: 95px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .floating-preview h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .floating-preview p {
+      color: #94a3b8;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    @media (min-width: 1240px) {
+      .floating-preview { display: block; }
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title .mini {
+      color: #38bdf8;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 54px);
+      margin: 12px 0;
+      letter-spacing: -1px;
+    }
+
+    .section-title p {
+      max-width: 720px;
+      margin: auto;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .glass-card {
+      padding: 26px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.80), rgba(15, 23, 42, 0.62));
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.23);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.14), transparent 40%);
+      opacity: 0;
+      transition: 0.25s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: 0 0 42px rgba(56, 189, 248, 0.14);
+    }
+
+    .glass-card:hover::before { opacity: 1; }
+
+    .icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(56, 189, 248, 0.11);
+      border: 1px solid rgba(56, 189, 248, 0.30);
+      color: #7dd3fc;
+      font-size: 28px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass-card h3,
+    .glass-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .glass-card p {
+      color: #cbd5e1;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .skill {
+      padding: 14px 18px;
+      border-radius: 999px;
+      color: #e0f2fe;
+      background: rgba(15, 23, 42, 0.86);
+      border: 1px solid rgba(56, 189, 248, 0.24);
+      box-shadow: inset 0 0 22px rgba(56, 189, 248, 0.04);
+      transition: 0.2s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-4px);
+      background: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.55);
+    }
+
+    .social-tree {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .social-link {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.80);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      transition: 0.25s ease;
+    }
+
+    .social-link:hover {
+      transform: translateX(8px);
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: 0 0 34px rgba(56, 189, 248, 0.12);
+    }
+
+    .social-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #0284c7, #7c3aed);
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.25);
+      font-size: 23px;
+      flex: 0 0 auto;
+    }
+
+    .social-link h3 {
+      margin-bottom: 4px;
+      font-size: 19px;
+    }
+
+    .social-link p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .arrow {
+      color: #38bdf8;
+      font-weight: 900;
+    }
+
+    .plans-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.76);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(#38bdf8, #8b5cf6);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .timeline-item p {
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+
+    .vision-card {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: auto;
+      padding: 28px;
+      border-radius: 26px;
+      background: rgba(15, 23, 42, 0.80);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 0 45px rgba(56, 189, 248, 0.09);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(2, 6, 23, 0.72);
+      color: #ffffff;
+      outline: none;
+      font-size: 15px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.15);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .notice {
+      margin-top: 14px;
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #94a3b8;
+      background: rgba(2, 6, 23, 0.78);
+      border-top: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .footer-title {
+      color: #ffffff;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      nav { gap: 12px; }
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .quick-stats { margin: auto; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .plans-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      body { background-attachment: scroll; }
+      .navbar {
+        flex-direction: column;
+        padding: 16px 0;
+      }
+      nav { justify-content: center; }
+      nav a { font-size: 13px; }
+      .hero { padding-top: 48px; }
+      .quick-stats { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .social-link {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: min(92%, 1160px); }
+      section { padding: 66px 0; }
+      .hero h1 { font-size: 42px; }
+      .tech-card { min-height: 390px; }
+      .profile-orb {
+        width: 120px;
+        height: 120px;
+      }
+      .profile-orb::before { font-size: 50px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <a class="logo" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#home">
+        <div class="logo-mark">M</div>
+        <div class="logo-text">My<span>Profile</span></div>
+      </a>
+
+      <nav>
+        <a href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#home">Home</a>
+        <a href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#profile">Profile</a>
+        <a href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#achievements">Achievements</a>
+        <a href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#talents">Talents</a>
+        <a href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#socials">Socials</a>
+        <a href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#plans">Plans</a>
+        <a class="nav-button" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="floating-preview" aria-label="Sticky profile preview">
+    <img src="./My Digital Profile.html_Final_zion_files/profile-preview.png" alt="My Digital Profile Preview">
+    <h3>My Digital Profile</h3>
+    <p>This profile preview stays in place while you scroll on desktop.</p>
+  </div>
+
+  <main>
+    <section id="home">
+      <div class="container hero">
+        <div>
+          <div class="tag">
+            <span class="tag-dot"></span>
+            Modern Personal Landing Page
+          </div>
+
+          <h1>
+            Welcome to
+            <span class="gradient-text">My Digital Profile</span>
+          </h1>
+
+          <p>
+            A clean and modern digital space for my profile, achievements,
+            talents, social media links, and future projects. This is where I
+            share what I am learning, building, and dreaming about.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#profile">Explore My Profile</a>
+            <a class="btn secondary" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#plans">View My Projects</a>
+          </div>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <strong>01</strong>
+              <span>Personal Website</span>
+            </div>
+            <div class="stat">
+              <strong>08+</strong>
+              <span>Skills To Improve</span>
+            </div>
+            <div class="stat">
+              <strong>03</strong>
+              <span>Project Ideas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="tech-card">
+            <div class="scan-line"></div>
+            <img class="preview-image" src="./My Digital Profile.html_Final_zion_files/profile-preview.png" alt="Modern profile preview image">
+            <div class="profile-orb"></div>
+            <h2>My Digital Profile</h2>
+            <p>
+              Young learner, creative thinker, future builder, and dreamer.
+              One step at a time, one project at a time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">About Me</div>
+          <h2>My Profile</h2>
+          <p>
+            This section introduces who I am, what I like, and what motivates me
+            to learn and build new things.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="glass-card">
+            <div class="icon">👦</div>
+            <h3>Who I Am</h3>
+            <p>
+              I am a young learner who loves discovering new ideas, improving
+              my skills, and creating projects that help me grow and also i play the trumpet , my favorite thing to do is coding , my dream job is to become a programmer , and i can generate games.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="icon">📚</div>
+            <h3>My Background</h3>
+            <p>
+              I enjoy learning about school topics, technology, creativity,
+              music, games, and digital projects , and in my free time i play games sometimes but i learn coding more often
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="icon">🌟</div>
+            <h3>My Goal</h3>
+            <p>
+              My goal is to keep learning to code so me and my father can become a team in coding and make money, build useful projects like generatine AI , and become
+              better step by step.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Milestones</div>
+          <h2>Achievements</h2>
+          <p>
+            These are sample achievements. You can edit these later and add your
+            real school, music, coding, or personal achievements.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="glass-card">
+            <div class="icon">🏆</div>
+            <h3>School Progress</h3>
+            <p>
+              I continue to improve in school and learn new lessons that help me
+              understand the world better.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="icon">🎹</div>
+            <h3>Piano Practice</h3>
+            <p>
+              I am learning music and improving my discipline through regular
+              piano practice.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="icon">💻</div>
+            <h3>First Website</h3>
+            <p>
+              This landing page is one of my first digital projects and a great
+              step into coding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="talents">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Skills</div>
+          <h2>Talents</h2>
+          <p>
+            These are the talents and skills I want to improve as I continue
+            learning.
+          </p>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="skill">Coding Basics</div>
+          <div class="skill">Piano</div>
+          <div class="skill">Creativity</div>
+          <div class="skill">Problem Solving</div>
+          <div class="skill">Learning AI Tools</div>
+          <div class="skill">Communication</div>
+          <div class="skill">Design Ideas</div>
+          <div class="skill">Project Planning</div>
+          <div class="skill">Gaming Ideas</div>
+          <div class="skill">Web Design</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="socials">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Connect</div>
+          <h2>Social Media Tree</h2>
+          <p>
+            Add safe public links here. Avoid private information like your home
+            address, phone number, school name, or personal location.
+          </p>
+        </div>
+
+        <div class="social-tree">
+          <a class="social-link" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#" target="_blank">
+            <div class="social-left">
+              <div class="social-icon">▶️</div>
+              <div>
+                <h3>YouTube</h3>
+                <p>My videos and creative content</p>
+              </div>
+            </div>
+            <span class="arrow">Visit →</span>
+          </a>
+
+          <a class="social-link" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#" target="_blank">
+            <div class="social-left">
+              <div class="social-icon">🎮</div>
+              <div>
+                <h3>Gaming Page</h3>
+                <p>My gaming ideas and projects</p>
+              </div>
+            </div>
+            <span class="arrow">Visit →</span>
+          </a>
+
+          <a class="social-link" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#" target="_blank">
+            <div class="social-left">
+              <div class="social-icon">💻</div>
+              <div>
+                <h3>GitHub</h3>
+                <p>My coding projects</p>
+              </div>
+            </div>
+            <span class="arrow">Visit →</span>
+          </a>
+
+          <a class="social-link" href="file:///C:/Users/norre/Downloads/MyDigitalProfile_Final_Ready/MyDigitalProfile_Final_Ready/index.html#" target="_blank">
+            <div class="social-left">
+              <div class="social-icon">📸</div>
+              <div>
+                <h3>Instagram</h3>
+                <p>My creative posts</p>
+              </div>
+            </div>
+            <span class="arrow">Visit →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Future</div>
+          <h2>Plans and Projects</h2>
+          <p>
+            These are the ideas I want to build as I continue learning coding,
+            design, and technology.
+          </p>
+        </div>
+
+        <div class="plans-layout">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Project 1: Personal Website</h3>
+              <p>
+                Build and improve this website with better design, animations,
+                and real content.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <h3>Project 2: War Games Hub</h3>
+              <p>
+                Create a game discovery hub with search, categories, game cards,
+                and favorites.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <h3>Project 3: Piano Practice Tracker</h3>
+              <p>
+                Make a simple tracker to record piano lessons, practice time,
+                and progress.
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-card vision-card">
+            <div class="icon">🚀</div>
+            <h3>My Bigger Vision</h3>
+            <p>
+              I want to keep building projects that help me learn faster,
+              become more creative, and understand how websites, apps,
+              automation work , and i will create my very own app and company that i can work with when i grow up .
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Message</div>
+          <h2>Contact</h2>
+          <p> 
+           ("To send your Message please go to your email app , and press Send Message to send.");
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <div class="form-row">
+            <input type="text" id="name" placeholder="Your name">
+            <input type="email" id="email" placeholder="Your email">
+          </div>
+
+          <textarea id="message" placeholder="Write your message here"></textarea>
+          <button class="btn" onclick="sendMessage()">Send Message</button>
+
+          <p class="notice">
+            Safety reminder: Do not place your private phone number, home
+            address, school name, or personal location on a public website.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-title">My Digital Profile</p>
+      <p>Built with HTML, CSS, and JavaScript</p>
+      <p id="year">© 2026 My Digital Profile</p>
+    </div>
+  </footer>
+
+  <script>
+    function sendMessage() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please complete all fields first.");
+        return;
+      }
+
+      alert("To send your Message please go to your email app , and press Send Message to send.");
+
+
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    }
+
+    document.getElementById("year").textContent =
+      "© " + new Date().getFullYear() + " My Digital Profile";
+  </script>
+<script>
+  function sendMessage() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      alert("Please complete all fields first.");
+      return;
+    }
+
+   const receiverEmail = "myemail@gmail.com";
+
+    const subject = "Message from My Digital Profile";
+    const body =
+      "Name: " + name + "%0D%0A" +
+      "Email: " + email + "%0D%0A%0D%0A" +
+      "Message:%0D%0A" + message;
+
+    window.location.href =
+      "mailto:" + receiverEmail +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + body;
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+  }
+
+  document.getElementById("year").textContent =
+    "© " + new Date().getFullYear() + " My Digital Profile";
+</script>
+
+
+</body></html>
